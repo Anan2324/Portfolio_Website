@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ananya Pandey | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f1a;
+      --accent: #00fff7;
+      --light: #e6f0ff;
+      --gray: #999;
+    }
+    .typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid #00fff7;
+  white-space: nowrap;
+  animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+  font-size: 1.4rem;
+  color: #aaa;
+  max-width: 100%;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.button {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #00fff7;
+  background: transparent;
+  color: #00fff7;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  background-color: #00fff7;
+  color: #0f0f1a;
+}
+
+
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Fira Code', monospace;
+      background-color: var(--bg);
+      color: var(--light);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #16162b;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--gray);
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .hero .intro {
+      color: #00ffaa;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+
+    .hero h2 {
+      color: var(--gray);
+      font-weight: 400;
+      margin: 1rem 0;
+    }
+
+    .hero p {
+      color: var(--light);
+      max-width: 600px;
+      margin: auto;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .button {
+      padding: 0.8rem 1.5rem;
+      border: 2px solid var(--accent);
+      background-color: transparent;
+      color: var(--accent);
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: var(--accent);
+      color: #0f0f1a;
+    }
+
+    .profile-img {
+      margin-top: 2rem;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Ananya Pandey</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <p class="intro">Hi, my name is</p>
+    <h1>Ananya Pandey<span style="color:#00fff7">.</span></h1>
+  <h2><span class="typewriter"></span></h2>
+<script>
+  const typedText = "I build data-driven, user-friendly web projects.";
+  const el = document.querySelector(".typewriter");
+
+  let index = 0;
+
+  function type() {
+    if (index < typedText.length) {
+      el.textContent += typedText.charAt(index);
+      index++;
+      setTimeout(type, 60);
+    }
+  }
+
+  type();
+</script>
+
+    <p>I'm a student at Macquarie University exploring web development & energy markets. I love coding with HTML, CSS, JS and analyzing real-world data to tell impactful stories.</p>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="button">👩‍💻 View My Work</a>
+    
+      <a href="assets/resume.pdf" class="button" target="_blank">📄 Download CV</a>
+    </div>
+
+    <img src="assets/img/profile.jpg" alt="Ananya's photo" class="profile-img" />
+  </section>
+
+<section id="projects" style="padding: 4rem 2rem; background-color: #16162b;">
+  <h2 style="text-align: center; font-size: 2rem; color: #00fff7; margin-bottom: 2rem;">
+    🌟 My Projects
+  </h2>
+
+  <!-- 🌐 Tech Projects -->
+  <h3 style="color:#00fff7; font-size: 1.5rem; margin-bottom: 1rem;">💻 Portfolio Projects</h3>
+  <div style="display: grid; gap: 2rem; max-width: 1000px; margin: auto;">
+
+    <div style="background: #0f0f1a; border: 1px solid #333; padding: 1.5rem; border-radius: 10px;">
+      <h4 style="color: #e6f0ff;">⚡ Generator Bidding Behaviour Analysis</h4>
+      <p style="color: #ccc;">Analyzed generator bidding data from Australia's NEM (2025) using Python and real market datasets.</p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a class="button" href="https://anan2324.github.io/My_Portfolio/" target="_blank">🌐 View Project</a>
+        <a class="button" href="report/NEM_Bidding_Report.pdf" target="_blank">📄 Report</a>
+      </div>
+    </div>
+
+    <div style="background: #0f0f1a; border: 1px solid #333; padding: 1.5rem; border-radius: 10px;">
+      <h4 style="color: #e6f0ff;">💼 Personal Portfolio Website</h4>
+      <p style="color: #ccc;">Responsive personal website with animated hero, project showcase, and interactive scroll — built with HTML, CSS & JS.</p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a class="button" href="https://github.com/Anan2324/portfolio-site" target="_blank">🔗 GitHub</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 📘 Academic Projects -->
+ 
+
+  <h3 style="color:#00fff7; font-size: 1.5rem; margin: 3rem 0 1rem;">📚 Academic Work</h3>
+  
+  <div style="display: grid; gap: 2rem; max-width: 1000px; margin: auto;">
+
+    <div style="background: #0f0f1a; border: 1px solid #333; padding: 1.5rem; border-radius: 10px;">
+  <h3 style="color: #ffffff; font-family: monospace;">📄 <strong>Power BI Demographic Insights</strong></h3>
+  <p style="color: #d1d5db;">
+    Developed an interactive 3-page Power BI report to analyze Australia’s resident population (1996–2016).  
+    Visualized trends by country of birth, age group, gender, and region to explore migration patterns and demographic shifts.
+  </p>
+<a href="https://app.powerbi.com/view?r=eyJrIjoiOGUyOGFiZTgtNjY0NS00NzQ3LTgzZmQtYWY2ZTEwNThhYWY2IiwidCI6IjgyYzUxNGMxLWE3MTctNDA4Ny1iZTA2LWQ0MGQyMDcwYWQ1MiJ9" 
+   target="_blank"
+   style="display: inline-block; padding: 10px 20px; border: 2px solid #00ffff; color: #00ffff; font-weight: bold; text-decoration: none; border-radius: 8px; font-family: monospace; line-height: 1.4; font-size: 16px;">
+   View Dashboard
+</a>
+</div>
+
+ 
+  <div style="display: grid; gap: 2rem; max-width: 1000px; margin: auto;">
+
+    <div style="background: #0f0f1a; border: 1px solid #333; padding: 1.5rem; border-radius: 10px;">
+      <h4 style="color: #e6f0ff;">📊 Energy Market Research Paper</h4>
+      <p style="color: #ccc;">Submitted as part of my coursework — explored dispatch optimization and auction strategies in renewable-heavy grids.</p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a class="button" href="report/energy_paper.pdf" target="_blank">📄 Download Paper</a>
+      </div>
+  
+
+      
+      
+    </div>
+
+    <div style="background: #0f0f1a; border: 1px solid #333; padding: 1.5rem; border-radius: 10px;">
+      <h4 style="color: #e6f0ff;">📂 Excel-Based Demand Forecasting Model</h4>
+      <p style="color: #ccc;">Created an Excel model with regression and trend analysis to forecast demand for academic energy case studies.</p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a class="button" href="files/demand_model.xlsx" target="_blank">📥 Download Model</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+</body>
+</html>
