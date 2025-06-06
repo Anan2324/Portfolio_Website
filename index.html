@@ -12,67 +12,33 @@
       --light: #e6f0ff;
       --gray: #999;
     }
-    .typewriter {
-  display: inline-block;
-  overflow: hidden;
-  border-right: 2px solid #00fff7;
-  white-space: nowrap;
-  animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
-  font-size: 1.4rem;
-  color: #aaa;
-  max-width: 100%;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-.button {
-  padding: 0.6rem 1.2rem;
-  border: 2px solid #00fff7;
-  background: transparent;
-  color: #00fff7;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.button:hover {
-  background-color: #00fff7;
-  color: #0f0f1a;
-}
-
-
-
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: 'Fira Code', monospace;
       background-color: var(--bg);
       color: var(--light);
+      scroll-behavior: smooth;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 1.2rem 2rem;
       background-color: #16162b;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 600;
       color: var(--accent);
     }
@@ -84,9 +50,10 @@
     }
 
     nav a {
-      text-decoration: none;
       color: var(--gray);
-      transition: color 0.3s ease;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
     }
 
     nav a:hover {
@@ -100,52 +67,64 @@
       margin: auto;
     }
 
-    .hero .intro {
+    .intro {
       color: #00ffaa;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
     }
 
-    .hero h1 {
+    h1 {
       font-size: 3rem;
-      font-weight: 600;
+      margin: 0.5rem 0;
     }
 
-    .hero h2 {
-      color: var(--gray);
-      font-weight: 400;
-      margin: 1rem 0;
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      border-right: 2px solid #00fff7;
+      white-space: nowrap;
+      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+      font-size: 1.4rem;
+      color: #aaa;
+      max-width: 100%;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
     }
 
     .hero p {
-      color: var(--light);
       max-width: 600px;
-      margin: auto;
-      margin-top: 1rem;
+      margin: 1rem auto 2rem;
       line-height: 1.6;
+      color: var(--light);
     }
 
     .hero-buttons {
-      margin-top: 2rem;
       display: flex;
       justify-content: center;
       gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .button {
-      padding: 0.8rem 1.5rem;
+      padding: 0.8rem 1.4rem;
       border: 2px solid var(--accent);
-      background-color: transparent;
       color: var(--accent);
-      font-weight: 600;
+      background: transparent;
       border-radius: 6px;
       text-decoration: none;
+      font-weight: 600;
       transition: all 0.3s ease;
     }
 
     .button:hover {
       background-color: var(--accent);
-      color: #0f0f1a;
+      color: var(--bg);
     }
 
     .profile-img {
@@ -155,6 +134,78 @@
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid var(--accent);
+    }
+
+    section {
+      padding: 4rem 2rem;
+    }
+
+    #projects {
+      background-color: #16162b;
+    }
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .project-card {
+      background: #0f0f1a;
+      border: 1px solid #333;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .project-card h3,
+    .project-card h4 {
+      color: #e6f0ff;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      color: #ccc;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .project-card a {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      color: #00ffff;
+      border: 1px solid #00ffff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-family: monospace;
+      transition: all 0.3s ease;
+    }
+
+    .project-card a:hover {
+      background: #00ffff;
+      color: #0f0f1a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #16162b;
+      color: #999;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
@@ -169,7 +220,7 @@
   </style>
 </head>
 <body>
-    
+
   <header>
     <div class="logo">Ananya Pandey</div>
     <nav>
@@ -184,196 +235,83 @@
   <section class="hero" id="home">
     <p class="intro">Hi, my name is</p>
     <h1>Ananya Pandey<span style="color:#00fff7">.</span></h1>
-  <h2><span class="typewriter"></span></h2>
-<script>
-  const typedText = "I build data-driven, user-friendly web projects.";
-  const el = document.querySelector(".typewriter");
-
-  let index = 0;
-
-  function type() {
-    if (index < typedText.length) {
-      el.textContent += typedText.charAt(index);
-      index++;
-      setTimeout(type, 60);
-    }
-  }
-
-  type();
-</script>
+    <h2><span class="typewriter"></span></h2>
 
     <p>I'm a student at Macquarie University exploring web development & energy markets. I love coding with HTML, CSS, JS and analyzing real-world data to tell impactful stories.</p>
 
     <div class="hero-buttons">
       <a href="#projects" class="button">👩‍💻 View My Work</a>
-    
       <a href="assets/resume.pdf" class="button" target="_blank">📄 Download CV</a>
     </div>
 
-    <img src="assets/img/profile.jpg" alt="Ananya's photo" class="profile-img" />
+    <img src="https://raw.githubusercontent.com/Anan2324/Portfolio_Website/main/Static/Ananya.png" alt="Ananya's photo" class="profile-img" />
   </section>
 
-<section id="projects" style="padding: 4rem 2rem; background-color: #16162b;">
-  <h2 style="text-align: center; font-size: 2rem; color: #00fff7; margin-bottom: 2rem;">
-    🌟 My Projects
-  </h2>
+  <section id="projects">
+    <h2 style="text-align: center; font-size: 2rem; color: #00fff7; margin-bottom: 2rem;">🌟 My Projects</h2>
 
-  <!-- 🌐 Tech Projects -->
-  <h3 style="color:#00fff7; font-size: 1.5rem; margin-bottom: 1rem;">💻 Portfolio Projects</h3>
-<div style="display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 1.5rem;">
+    <div class="projects-container">
 
-  <!-- Project Card -->
-  <div style="background: #0f0f1a; border: 1px solid #333; padding: 1.5rem; border-radius: 10px; max-width: 800px; text-align: center;">
-    <h3 style="color: #e6f0ff;">⚡ Generator Bidding Behaviour Analysis</h3>
-    <p style="color: #ccc;">
-      Analyzed generator bidding data from Australia’s NEM (2025) using Python and real market datasets.
-    </p>
-    <a href="https://github.com/Anan2324/Generator-Bidding-Behaviour-Analysis-NEM-2025-" 
-       target="_blank"
-       style="display: inline-block; padding: 10px 20px; border: 2px solid #00ffff; color: #00ffff; font-weight: bold;
-              text-decoration: none; border-radius: 8px; font-family: monospace; font-size: 16px;">
-      🌐 View Project on GitHub
-    </a>
-  </div>
+      <div class="project-card">
+        <h3>⚡ Generator Bidding Behaviour Analysis</h3>
+        <p>Analyzed generator bidding data from Australia’s NEM (2025) using Python and real market datasets.</p>
+        <a href="https://github.com/Anan2324/Generator-Bidding-Behaviour-Analysis-NEM-2025-" target="_blank">🌐 View Project on GitHub</a>
+      </div>
 
-</div>
+      <div class="project-card">
+        <img src="https://raw.githubusercontent.com/Anan2324/Portfolio_Website/main/Static/PowerBi.png" alt="Power BI Dashboard Preview">
+        <h3>📄 Power BI Demographic Insights</h3>
+        <p>Analyzed Australia’s population (1996–2016) using Power BI — trends by age, region, gender & country.</p>
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiOGUyOGFiZTgtNjY0NS00NzQ3LTgzZmQtYWY2ZTEwNThhYWY2IiwidCI6IjgyYzUxNGMxLWE3MTctNDA4Ny1iZTA2LWQ0MGQyMDcwYWQ1MiJ9" target="_blank">📊 View Dashboard</a>
+      </div>
 
+      <div class="project-card">
+        <img src="https://raw.githubusercontent.com/Anan2324/Portfolio_Website/main/Static/Gemini.png" alt="ChatGPT Chatbot Preview">
+        <h3>🤖 Gemini Chatbot</h3>
+        <p>Built a mental health chatbot using ChatGPT API with journaling support and animated UX.</p>
+        <a href="https://anan2324.github.io/Gemini_Chatbot/" target="_blank">💬 Try Chatbot</a>
+      </div>
 
+      <div class="project-card">
+        <img src="https://raw.githubusercontent.com/Anan2324/Portfolio_Website/main/Static/Bikesales.png" alt="Excel Bike Sales Preview">
+        <h4>🚲 Excel Bike Sales Project</h4>
+        <p>Dashboard for a bike retailer with filters, KPIs, and customer segments — built in Excel.</p>
+        <a href="https://github.com/Anan2324/Excel-Bike-Sales-Project-Dataset.xlsx/raw/refs/heads/main/Excel%20Bike%20Sales%20Project%20Dataset.xlsx" target="_blank">📄 Download File</a>
+      </div>
 
-  </div>
+      <div class="project-card">
+        <img src="https://raw.githubusercontent.com/Anan2324/Portfolio_Website/main/Static/Pokemon.png" alt="Pokémon Analysis Project">
+        <h4>🔍 Pokémon Analysis Project</h4>
+        <p>ML project to classify legendary Pokémon using Kaggle data — visual + classification models.</p>
+        <a href="https://github.com/Anan2324/Pokemon_Analysis" target="_blank">📁 View on GitHub</a>
+      </div>
 
-  <!-- 📘 Academic Projects -->
- 
+      <div class="project-card">
+        <img src="https://raw.githubusercontent.com/Anan2324/Portfolio_Website/main/Static/AmazonSales.png" alt="Amazon Reviews Analysis">
+        <h4>🛒 Amazon Reviews & Ratings</h4>
+        <p>Sentiment analysis of product reviews using NLP, Python & Colab. Visualized customer emotions.</p>
+        <a href="https://colab.research.google.com/github/Anan2324/Amazon-Product-Reviews-Ratings-Analysis/blob/main/Amazon_sales.ipynb" target="_blank">▶️ Open in Colab</a>
+      </div>
 
-  <h3 style="color:#00fff7; font-size: 1.5rem; margin: 3rem 0 1rem;">📚 Academic Work</h3>
-  
-  <div style="display: grid; gap: 2rem; max-width: 1000px; margin: auto;">
+    </div>
+  </section>
 
-<div style="background: #0f0f1a; border: 1px solid #333; padding: 1.5rem; border-radius: 10px; max-width: 600px;">
-  
-  <!-- Image Preview -->
-  <img src="Screenshot 2025-06-06 at 1.34.52 pm.png" alt="Power BI Dashboard Preview"
-       style="width: 100%; border-radius: 8px; margin-bottom: 1rem;" />
+  <footer>
+    &copy; 2025 Ananya Pandey — Made with ❤️ using HTML, CSS, JS
+  </footer>
 
-  <!-- Title & Description -->
-  <h3>📄 <strong>Power BI Demographic Insights</strong></h3>
-  <p>
-    Developed an interactive 3-page Power BI report to analyze Australia’s resident population (1996–2016).
-    Visualized trends by country of birth, age group, gender, and region to explore migration patterns and demographic shifts.
-  </p>
-
-  <!-- Call-to-Action Button -->
-  <a href="https://app.powerbi.com/view?r=eyJrIjoiOGUyOGFiZTgtNjY0NS00NzQ3LTgzZmQtYWY2ZTEwNThhYWY2IiwidCI6IjgyYzUxNGMxLWE3MTctNDA4Ny1iZTA2LWQ0MGQyMDcwYWQ1MiJ9" 
-   target="_blank" style="
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    color: #00ffff;
-    border: 1px solid #00ffff;
-    border-radius: 5px;
-    text-decoration: none;
-    white-space: nowrap;
-  ">📊 View Dashboard</a>
-</div>
-
- <div style="background: #0f0f1a; border: 1px solid #333; padding: 1.5rem; border-radius: 10px; max-width: 600px;">
-
-  <!-- Image Preview -->
-  <img src="your-chatbot-image.png" alt="ChatGPT Chatbot Preview"
-       style="width: 100%; border-radius: 8px; margin-bottom: 1rem;" />
-
-  <!-- Title & Description -->
-  <h3>🤖 <strong>ChatGPT Chatbot Project</strong></h3>
-  <p>
-    Built a conversational AI chatbot using the ChatGPT API. Designed to assist users with mental wellness inquiries
-    and personalized journaling. Integrated user input handling, styled responses, and background animations for a professional UX.
-  </p>
-
-  <!-- Button -->
-  <a href="https://anan2324.github.io/Gemini_Chatbot/" 
-     target="_blank"
-     style="display: inline-block; padding: 10px 20px; border: 2px solid #00ffff; color: #00ffff; font-weight: bold; text-decoration: none; border-radius: 8px; font-family: monospace; line-height: 1.4; font-size: 16px;">
-     View Dashboard
-  </a>
-
-</div>
-
-<div style="background: #0f0f1a; border: 1px solid #333; padding: 1.5rem; border-radius: 10px; max-width: 600px;">
-
-  <!-- Image Preview -->
-  <img src="assets/excel_bike_sales_preview.png" alt="Excel Bike Sales Project Preview"
-       style="width: 100%; border-radius: 8px; margin-bottom: 1rem;" />
-
-  <!-- Title & Description -->
-  <h4 style="color: #e6f0ff;">🚲 Excel Bike Sales Project</h4>
-  <p style="color: #ccc;">
-    Built an Excel dashboard to explore sales performance, customer segmentation, and regional trends for a bike retailer.
-    Included dynamic filtering, trend lines, and calculated KPIs to support business decision-making.
-  </p>
-
-  <!-- Button -->
-  <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a href="https://github.com/Anan2324/Excel-Bike-Sales-Project-Dataset.xlsx/raw/refs/heads/main/Excel%20Bike%20Sales%20Project%20Dataset.xlsx" 
-       target="_blank"
-       style="display: inline-block; padding: 10px 20px; border: 2px solid #00ffff; color: #00ffff; font-weight: bold;
-              text-decoration: none; border-radius: 8px; font-family: monospace; font-size: 16px;">
-      📄 Download Excel File
-    </a>
-  </div>
-
-</div>
-
-
-<div style="background: #0f0f1a; border: 1px solid #333; padding: 1.5rem; border-radius: 10px; max-width: 600px;">
-
-  <!-- Image Preview -->
-  <img src="pokemon_analysis_preview.png" alt="Pokémon Analysis Project Preview"
-       style="width: 100%; border-radius: 8px; margin-bottom: 1rem;" />
-
-  <!-- Title & Description -->
-  <h4 style="color: #e6f0ff;">🔍 Pokémon Analysis Project</h4>
-  <p style="color: #ccc;">
-    A machine learning project exploring what makes a Pokémon “legendary.” Analyzed 801 Pokémon using attributes from a Pokédex dataset sourced from Kaggle. Applied classification models and visual insights to uncover traits that distinguish legendary Pokémon.
-  </p>
-
-  <!-- GitHub Link Button -->
-  <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-    <a href="https://github.com/Anan2324/Pokemon_Analysis" target="_blank"
-       style="display: inline-block; padding: 10px 20px; border: 2px solid #00ffff; color: #00ffff; font-weight: bold;
-              text-decoration: none; border-radius: 8px; font-family: monospace; font-size: 16px;">
-      📁 View on GitHub
-    </a>
-  </div>
-
-</div>
-
-<div style="background: #0f0f1a; border: 1px solid #333; padding: 1.5rem; border-radius: 10px; max-width: 600px;">
-
-  <!-- Image Preview -->
-  <img src="amazon_reviews_preview.png" alt="Amazon Reviews Project Preview"
-       style="width: 100%; border-radius: 8px; margin-bottom: 1rem;" />
-
-  <!-- Title & Description -->
-  <h4 style="color: #e6f0ff;">🛒 Amazon Reviews & Ratings Analysis</h4>
-  <p style="color: #ccc;">
-    An end-to-end exploratory and sentiment analysis project using Amazon product review data. Performed text preprocessing,
-    rating distribution analysis, and visualized customer sentiment trends. Built in Python using Pandas, Seaborn, and NLP libraries.
-  </p>
-
-  <!-- GitHub Link Button -->
-  <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-   <a href="https://colab.research.google.com/github/Anan2324/Amazon-Product-Reviews-Ratings-Analysis/blob/main/Amazon_sales.ipynb" 
-   target="_blank"
-   style="display: inline-block; padding: 10px 20px; border: 2px solid #00ffff; color: #00ffff; font-weight: bold;
-          text-decoration: none; border-radius: 8px; font-family: monospace; font-size: 16px;">
-   ▶️ Open in Google Colab
-</a>
-
-  </div>
-
-</div>
-
-
-
+  <script>
+    const typedText = "I build data-driven, user-friendly web projects.";
+    const el = document.querySelector(".typewriter");
+    let index = 0;
+    function type() {
+      if (index < typedText.length) {
+        el.textContent += typedText.charAt(index);
+        index++;
+        setTimeout(type, 60);
+      }
+    }
+    type();
+  </script>
 </body>
 </html>
