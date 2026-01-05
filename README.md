@@ -1,4 +1,4 @@
-# 🌐 Ananya Pandey – Personal Portfolio Website
+# 🌐 Anant Pandey – Personal Portfolio Website
 
 Welcome to my interactive personal portfolio built using **HTML**, **CSS**, and **JavaScript**, and hosted via **GitHub Pages**.
 
